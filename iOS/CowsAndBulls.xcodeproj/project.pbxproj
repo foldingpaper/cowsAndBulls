@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB00000000000000000001 /* CowsAndBullsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000001 /* CowsAndBullsApp.swift */; };
+		BB00000000000000000002 /* Attempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000002 /* Attempt.swift */; };
+		BB00000000000000000003 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000003 /* GameConfig.swift */; };
+		BB00000000000000000004 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000004 /* GameEngine.swift */; };
+		BB00000000000000000005 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000005 /* Score.swift */; };
+		BB00000000000000000006 /* SecretGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000006 /* SecretGenerator.swift */; };
+		BB00000000000000000007 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000007 /* Validation.swift */; };
+		BB00000000000000000008 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000008 /* GameViewModel.swift */; };
+		BB00000000000000000009 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000009 /* HapticManager.swift */; };
+		BB0000000000000000000A /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000A /* SoundManager.swift */; };
+		BB0000000000000000000B /* AttemptBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000B /* AttemptBoardView.swift */; };
+		BB0000000000000000000C /* AttemptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000C /* AttemptRowView.swift */; };
+		BB0000000000000000000D /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000D /* ColorTheme.swift */; };
+		BB0000000000000000000E /* CurrentGuessInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000E /* CurrentGuessInputView.swift */; };
+		BB0000000000000000000F /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000F /* GameOverView.swift */; };
+		BB00000000000000000010 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000010 /* KeypadView.swift */; };
+		BB00000000000000000011 /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000011 /* MainGameView.swift */; };
+		BB00000000000000000012 /* RulesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000012 /* RulesSheetView.swift */; };
+		BB00000000000000000013 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000013 /* VictoryView.swift */; };
+		BB00000000000000000384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000384 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA00000000000000000001 /* CowsAndBullsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowsAndBullsApp.swift; sourceTree = "<group>"; };
+		AA00000000000000000002 /* Attempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attempt.swift; sourceTree = "<group>"; };
+		AA00000000000000000003 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		AA00000000000000000004 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		AA00000000000000000005 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		AA00000000000000000006 /* SecretGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretGenerator.swift; sourceTree = "<group>"; };
+		AA00000000000000000007 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		AA00000000000000000008 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		AA00000000000000000009 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		AA0000000000000000000A /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		AA0000000000000000000B /* AttemptBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptBoardView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000C /* AttemptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptRowView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000D /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		AA0000000000000000000E /* CurrentGuessInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGuessInputView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000F /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		AA00000000000000000010 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
+		AA00000000000000000011 /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
+		AA00000000000000000012 /* RulesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesSheetView.swift; sourceTree = "<group>"; };
+		AA00000000000000000013 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
+		AA00000000000000000384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA00000000000000000385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000000000000000000000001 /* CowsAndBulls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CowsAndBulls.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		110000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		220000000000000000000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000000000000000001 /* CowsAndBullsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		220000000000000000000002 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000000000000000002 /* Attempt.swift */,
+				AA00000000000000000003 /* GameConfig.swift */,
+				AA00000000000000000004 /* GameEngine.swift */,
+				AA00000000000000000005 /* Score.swift */,
+				AA00000000000000000006 /* SecretGenerator.swift */,
+				AA00000000000000000007 /* Validation.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		220000000000000000000003 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000000000000000008 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		220000000000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000000000000000009 /* HapticManager.swift */,
+				AA0000000000000000000A /* SoundManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		220000000000000000000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000B /* AttemptBoardView.swift */,
+				AA0000000000000000000C /* AttemptRowView.swift */,
+				AA0000000000000000000D /* ColorTheme.swift */,
+				AA0000000000000000000E /* CurrentGuessInputView.swift */,
+				AA0000000000000000000F /* GameOverView.swift */,
+				AA00000000000000000010 /* KeypadView.swift */,
+				AA00000000000000000011 /* MainGameView.swift */,
+				AA00000000000000000012 /* RulesSheetView.swift */,
+				AA00000000000000000013 /* VictoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		220000000000000000000006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000000000000000384 /* Assets.xcassets */,
+				AA00000000000000000385 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		220000000000000000000000 /* CowsAndBulls */ = {
+			isa = PBXGroup;
+			children = (
+				220000000000000000000001 /* App */,
+				220000000000000000000002 /* Core */,
+				220000000000000000000003 /* ViewModels */,
+				220000000000000000000005 /* Views */,
+				220000000000000000000004 /* Services */,
+				220000000000000000000006 /* Resources */,
+			);
+			path = CowsAndBulls;
+			sourceTree = "<group>";
+		};
+		220000000000000000000099 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000001 /* CowsAndBulls.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		220000000000000000000100 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				220000000000000000000000 /* CowsAndBulls */,
+				220000000000000000000099 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		330000000000000000000001 /* CowsAndBulls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 440000000000000000000002 /* Build configuration list for PBXNativeTarget "CowsAndBulls" */;
+			buildPhases = (
+				110000000000000000000002 /* Sources */,
+				110000000000000000000001 /* Frameworks */,
+				110000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CowsAndBulls;
+			productName = CowsAndBulls;
+			productReference = 000000000000000000000001 /* CowsAndBulls.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		550000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					330000000000000000000001 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 440000000000000000000001 /* Build configuration list for PBXProject "CowsAndBulls" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 220000000000000000000100 /* Root */;
+			productRefGroup = 220000000000000000000099 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				330000000000000000000001 /* CowsAndBulls */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		110000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB00000000000000000384 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		110000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB00000000000000000001 /* CowsAndBullsApp.swift in Sources */,
+				BB00000000000000000002 /* Attempt.swift in Sources */,
+				BB00000000000000000003 /* GameConfig.swift in Sources */,
+				BB00000000000000000004 /* GameEngine.swift in Sources */,
+				BB00000000000000000005 /* Score.swift in Sources */,
+				BB00000000000000000006 /* SecretGenerator.swift in Sources */,
+				BB00000000000000000007 /* Validation.swift in Sources */,
+				BB00000000000000000008 /* GameViewModel.swift in Sources */,
+				BB00000000000000000009 /* HapticManager.swift in Sources */,
+				BB0000000000000000000A /* SoundManager.swift in Sources */,
+				BB0000000000000000000B /* AttemptBoardView.swift in Sources */,
+				BB0000000000000000000C /* AttemptRowView.swift in Sources */,
+				BB0000000000000000000D /* ColorTheme.swift in Sources */,
+				BB0000000000000000000E /* CurrentGuessInputView.swift in Sources */,
+				BB0000000000000000000F /* GameOverView.swift in Sources */,
+				BB00000000000000000010 /* KeypadView.swift in Sources */,
+				BB00000000000000000011 /* MainGameView.swift in Sources */,
+				BB00000000000000000012 /* RulesSheetView.swift in Sources */,
+				BB00000000000000000013 /* VictoryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		660000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		660000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		660000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CowsAndBulls/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cowsandbulls.game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		660000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CowsAndBulls/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cowsandbulls.game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		440000000000000000000001 /* Build configuration list for PBXProject "CowsAndBulls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660000000000000000000001 /* Debug */,
+				660000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		440000000000000000000002 /* Build configuration list for PBXNativeTarget "CowsAndBulls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660000000000000000000003 /* Debug */,
+				660000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 550000000000000000000001 /* Project object */;
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "shell": {
+      "allow_read_commands": true,
+      "allow_write_commands": false,
+      "trusted_binaries": ["ls", "which", "grep", "git", "cp", "pwd", "cat", "find", "python3"]
+    }
+  }
+}
+

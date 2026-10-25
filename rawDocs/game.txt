@@ -1,0 +1,27 @@
+# Cows and Bulls
+----------------
+
+This is a guessing game. Typically played by two players.
+Let's call them player and challenger. The challenger picks a 
+4-digit number without revealing to the player and the player 
+guesses the number. The challenger and player can take turns
+and switch roles.
+
+Players use 4 unique (no repeated) digits from 0 to 9. (Leading 0 is
+allowed since it is treated as a 4-character code rather than a
+mathematical number)
+
+# Rules
+-------
+
+1. The player has 20 attempts, else they lose.
+2. The player can concede early and they lose. Quit is also concede.
+3. Secret is revealed on surrender.
+
+# Game in Play
+--------------
+1. Guessing player guesses the 4 digits.
+2. For every digit that is present in the number, but in wrong place the challeneger says Cow. e.g. 1 Cow, 2 Cows, 3 Cows, 4 Cows.
+3. For every digit that is present in the number and in right place the challeneger says Bull. e.g. 1 Bull, 2 Bulls, 3 Bulls, 4 Bulls.
+3. 4 Bulls is a victory to the guessing player.
+

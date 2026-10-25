@@ -1,0 +1,4 @@
+.build/
+.swiftpm/
+cows-and-bulls
+.DS_Store

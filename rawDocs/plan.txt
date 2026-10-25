@@ -1,0 +1,23 @@
+# Develop the game described in game.txt.
+
+- No server backend--everything runs locally in state memory.
+- Simple computer AI opponent.
+
+# Commnd-line game.
+- Single-player game playing with computer.
+- A display with all attempts in clear view.
+- A way to input the 4 digits and then locking those in as the attempt
+- A quirky funny indicator for each cow and bull with an audio
+- Use C and B as default for cow and bull.
+- Suggest some cartoon-like cow and bull icons
+- A celeberatory congratulations you win if player wins.
+- A empathetic better luck next time if player loses.
+
+# iOS app
+- Single-player game playing with computer.
+- A display with all attempts in clear view.
+- A way to input the 4 digits and then locking those in as the attempt
+- A quirky funny indicator for each cow and bull for every attempt
+- Use cartoon-like cow and bull faces for icons
+- A celeberatory congratulations you win if player wins.
+- A empathetic better luck next time if player loses.
