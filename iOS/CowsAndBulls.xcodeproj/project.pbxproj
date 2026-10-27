@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,10 +26,13 @@
 		BB00000000000000000011 /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000011 /* MainGameView.swift */; };
 		BB00000000000000000012 /* RulesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000012 /* RulesSheetView.swift */; };
 		BB00000000000000000013 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000013 /* VictoryView.swift */; };
+		BB00000000000000000014 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000014 /* QuoteProvider.swift */; };
 		BB00000000000000000384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000384 /* Assets.xcassets */; };
+		BB00000000000000000386 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000386 /* quotes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000000000000000000000001 /* CowsAndBulls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CowsAndBulls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA00000000000000000001 /* CowsAndBullsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowsAndBullsApp.swift; sourceTree = "<group>"; };
 		AA00000000000000000002 /* Attempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attempt.swift; sourceTree = "<group>"; };
 		AA00000000000000000003 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
@@ -49,9 +52,10 @@
 		AA00000000000000000011 /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 		AA00000000000000000012 /* RulesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesSheetView.swift; sourceTree = "<group>"; };
 		AA00000000000000000013 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
+		AA00000000000000000014 /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
 		AA00000000000000000384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA00000000000000000385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		000000000000000000000001 /* CowsAndBulls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CowsAndBulls.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA00000000000000000386 /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220000000000000000000000 /* CowsAndBulls */ = {
+			isa = PBXGroup;
+			children = (
+				220000000000000000000001 /* App */,
+				220000000000000000000002 /* Core */,
+				220000000000000000000003 /* ViewModels */,
+				220000000000000000000005 /* Views */,
+				220000000000000000000004 /* Services */,
+				220000000000000000000006 /* Resources */,
+			);
+			path = CowsAndBulls;
+			sourceTree = "<group>";
+		};
 		220000000000000000000001 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +116,7 @@
 			children = (
 				AA00000000000000000009 /* HapticManager.swift */,
 				AA0000000000000000000A /* SoundManager.swift */,
+				AA00000000000000000014 /* QuoteProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -124,21 +142,9 @@
 			children = (
 				AA00000000000000000384 /* Assets.xcassets */,
 				AA00000000000000000385 /* Info.plist */,
+				AA00000000000000000386 /* quotes.json */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		220000000000000000000000 /* CowsAndBulls */ = {
-			isa = PBXGroup;
-			children = (
-				220000000000000000000001 /* App */,
-				220000000000000000000002 /* Core */,
-				220000000000000000000003 /* ViewModels */,
-				220000000000000000000005 /* Views */,
-				220000000000000000000004 /* Services */,
-				220000000000000000000006 /* Resources */,
-			);
-			path = CowsAndBulls;
 			sourceTree = "<group>";
 		};
 		220000000000000000000099 /* Products */ = {
@@ -149,7 +155,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		220000000000000000000100 /* Root */ = {
+		220000000000000000000100 = {
 			isa = PBXGroup;
 			children = (
 				220000000000000000000000 /* CowsAndBulls */,
@@ -184,7 +190,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					330000000000000000000001 = {
 						CreatedOnToolsVersion = 14.3;
@@ -199,7 +205,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 220000000000000000000100 /* Root */;
+			mainGroup = 220000000000000000000100;
 			productRefGroup = 220000000000000000000099 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB00000000000000000384 /* Assets.xcassets in Resources */,
+				BB00000000000000000386 /* quotes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +251,7 @@
 				BB00000000000000000011 /* MainGameView.swift in Sources */,
 				BB00000000000000000012 /* RulesSheetView.swift in Sources */,
 				BB00000000000000000013 /* VictoryView.swift in Sources */,
+				BB00000000000000000014 /* QuoteProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,9 +312,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 8CD58H4GZ3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CowsAndBulls/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cows And Bulls";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +340,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 8CD58H4GZ3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CowsAndBulls/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cows And Bulls";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +382,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
 	rootObject = 550000000000000000000001 /* Project object */;
 }

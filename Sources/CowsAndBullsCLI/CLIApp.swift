@@ -15,6 +15,7 @@ public class CLIApp {
         
         var keepPlaying = true
         while keepPlaying {
+            renderer.cycleIntroQuote()
             playSingleGame()
             keepPlaying = askPlayAgain()
         }

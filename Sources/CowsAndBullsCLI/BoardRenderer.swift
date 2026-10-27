@@ -23,10 +23,22 @@ public struct ANSI {
 }
 
 public class BoardRenderer {
+    public static var introQuotes: [String] {
+        QuoteProvider.shared.quotes
+    }
+
     public var mode: DisplayMode = .classic
+    public var currentIntroQuote: String
+    private let quoteProvider: QuoteProvider
     
-    public init(mode: DisplayMode = .classic) {
+    public init(mode: DisplayMode = .classic, quoteProvider: QuoteProvider = .shared) {
         self.mode = mode
+        self.quoteProvider = quoteProvider
+        self.currentIntroQuote = quoteProvider.randomQuote()
+    }
+
+    public func cycleIntroQuote() {
+        currentIntroQuote = quoteProvider.randomQuote(excluding: currentIntroQuote)
     }
     
     /// Renders the main game header and instructions
@@ -35,6 +47,7 @@ public class BoardRenderer {
         output += "\(ANSI.bold)\(ANSI.cyan)╔═══════════════════════════════════════════════════════════════════╗\(ANSI.reset)\n"
         output += "\(ANSI.bold)\(ANSI.cyan)║                   🐂 COWS AND BULLS 🐮                            ║\(ANSI.reset)\n"
         output += "\(ANSI.bold)\(ANSI.cyan)╚═══════════════════════════════════════════════════════════════════╝\(ANSI.reset)\n"
+        output += "\(ANSI.bold)\(ANSI.yellow)🌾 \(currentIntroQuote)\(ANSI.reset)\n\n"
         output += "\(ANSI.dim)Rules: Guess 4 unique digits (0-9). Max \(engine.config.maxAttempts) attempts.\(ANSI.reset)\n"
         output += "\(ANSI.dim)Commands: 'quit' / 'concede' to surrender | 'mode' to toggle B/C vs 🐂/🐮 | 'sound' to toggle audio\(ANSI.reset)\n"
         
