@@ -91,11 +91,49 @@ Given that the target is specifically iOS and the game engine is already impleme
 
 ---
 
-## 5. Status & Future Enhancements
+## 5. Phase 3: Externalized Farm Intro Quotes (Completed)
 
-* [x] Core game engine implementation and unit tests.
+* **Date**: 2026-10-26 – 2026-11-01
+* **Objective**: Introduce quirky farm-themed 1-to-1.5 liner introductions that cycle dynamically on each new game, externalized in JSON for easy maintenance.
+* **CLI Implementation**:
+  * [`Resources/quotes.json`](file:///Users/skand/projects/cowsAndBulls/Resources/quotes.json): Externalized pool of 12 witty cow/bull quotes.
+  * [`QuoteProvider.swift`](file:///Users/skand/projects/cowsAndBulls/Sources/CowsAndBullsCLI/QuoteProvider.swift): Service to parse JSON bundle resource or fallback safely to built-in defaults, providing non-repeating random selection.
+  * Integrated into [`BoardRenderer.swift`](file:///Users/skand/projects/cowsAndBulls/Sources/CowsAndBullsCLI/BoardRenderer.swift) and [`CLIApp.swift`](file:///Users/skand/projects/cowsAndBulls/Sources/CowsAndBullsCLI/CLIApp.swift) to display `🌾 [quote]` in the game header.
+* **iOS Implementation**:
+  * [`iOS/CowsAndBulls/Resources/quotes.json`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Resources/quotes.json): Bundled resource in the iOS target.
+  * [`iOS/CowsAndBulls/Services/QuoteProvider.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Services/QuoteProvider.swift): Dedicated provider for SwiftUI views.
+  * [`iOS/CowsAndBulls/Views/QuoteBannerView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/QuoteBannerView.swift): Interactive rotating quote banner positioned under the header bar, featuring tap-to-cycle with tactile feedback, auto-rotation timer, and per-new-game quote cycling.
+
+---
+
+## 6. Phase 4: World Pasture Theme Selector (Completed)
+
+* **Date**: 2026-11-01
+* **Design Philosophy**: Keep the signature farm identity, retaining **Original** as the clean Apple iOS default while offering 5 immersive world grazing pastures.
+* **Themes Built**:
+  1. 🐮 **Original** (Default): Native Apple system grouped colors adapting seamlessly to system Light and Dark modes.
+  2. 🚜 **Classic Barnyard**: Warm sunny amber, rustic red barn headers, and countryside pasture greens.
+  3. 🏔️ **Swiss Alpine Meadow**: Crisp mountain sky-blue, snow slate, edelweiss gold & brass cowbells.
+  4. 🇳🇿 **New Zealand Pasture**: Rich emerald rolling hills, deep fern greens, and misty morning teal atmosphere.
+  5. 🤠 **Texas / Outback Ranch**: Sun-drenched canyon terracotta, rustic leather tan, and golden sunset hues.
+  6. 🌙 **Midnight Pasture**: Moonlit indigo night sky, dark slate, and glowing firefly accents (OLED dark theme).
+* **Components Built**:
+  * [`PastureTheme.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/PastureTheme.swift): Strong enum defining the 6 palettes (app background, card, surface, text, bull/cow accents, preferred color scheme).
+  * [`PastureThemeSelectorView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/PastureThemeSelectorView.swift): Compact horizontal capsule switcher placed right on the main game board between the Quote Banner and Attempt Progress pill.
+  * [`GameViewModel.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/ViewModels/GameViewModel.swift): Theme state management with `@AppStorage` / `UserDefaults` persistence across app launches.
+  * Verified compilation across iOS Simulator via `xcodebuild` (`** BUILD SUCCEEDED **`).
+
+---
+
+## 7. Status & Future Enhancements
+
+* [x] Core game engine implementation and unit tests (26 passing tests).
 * [x] Feature-complete Swift CLI game with audio, board rendering, and cartoon toggles.
 * [x] Architectural decision: Native SwiftUI for iOS.
 * [x] Native SwiftUI project scaffolding and implementation in [`iOS/`](file:///Users/skand/projects/cowsAndBulls/iOS).
 * [x] Verified compilation across iOS 18 SDK and added shared scheme [`CowsAndBulls.xcscheme`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls.xcodeproj/xcshareddata/xcschemes/CowsAndBulls.xcscheme).
+* [x] Externalized quirky farm quotes in JSON and CLI integration.
+* [x] Interactive rotating quote banner in iOS app (`QuoteBannerView`).
+* [x] World Pasture Theme Selector with 6 presets and persistent storage.
+* [ ] Run and verify iOS app on iPhone 16e simulator.
 * [ ] (Optional) Computer AI Solver / reverse mode (where player sets the secret and computer guesses).

@@ -21,3 +21,11 @@
 - Use cartoon-like cow and bull faces for icons
 - A celeberatory congratulations you win if player wins.
 - A empathetic better luck next time if player loses.
+
+# Theme selector for iOS App
+- Original (Default system styling)
+- Classic Barnyard
+- Swiss Alpine Meadows
+- New Zealand Pastures
+- Texas / Outback Ranch
+- Midnight Pasture

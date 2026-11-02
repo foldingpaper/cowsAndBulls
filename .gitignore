@@ -2,3 +2,6 @@
 .swiftpm/
 cows-and-bulls
 .DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/

@@ -19,9 +19,26 @@ public class GameViewModel: ObservableObject {
     // Services
     private let soundManager = SoundManager.shared
     private let hapticManager = HapticManager.shared
+    private let quoteProvider: QuoteProvider
     
-    public init(engine: GameEngine = GameEngine()) {
+    // Rotating Quirky Farm Quotes
+    @Published public var currentQuote: String = ""
+    
+    // World Pasture Theming
+    private static let themeStorageKey = "cowsAndBulls.selectedPastureTheme"
+    @Published public var currentTheme: PastureTheme = .original
+    
+    public init(engine: GameEngine = GameEngine(), quoteProvider: QuoteProvider = .shared) {
         self.engine = engine
+        self.quoteProvider = quoteProvider
+        self.currentQuote = quoteProvider.randomQuote()
+        
+        if let savedThemeRaw = UserDefaults.standard.string(forKey: Self.themeStorageKey),
+           let savedTheme = PastureTheme(rawValue: savedThemeRaw) {
+            self.currentTheme = savedTheme
+        } else {
+            self.currentTheme = .original
+        }
     }
     
     // MARK: - Computed Properties
@@ -71,6 +88,22 @@ public class GameViewModel: ObservableObject {
         errorMessage = nil
         showVictoryModal = false
         showGameOverModal = false
+        currentQuote = quoteProvider.randomQuote(excluding: currentQuote)
+        hapticManager.digitTapped()
+    }
+    
+    /// Cycles to another random quote from the pool (preventing immediate repetition).
+    public func cycleQuote(withHaptic: Bool = true) {
+        currentQuote = quoteProvider.randomQuote(excluding: currentQuote)
+        if withHaptic {
+            hapticManager.digitTapped()
+        }
+    }
+    
+    /// Updates the active pasture theme and persists the choice across app restarts.
+    public func setTheme(_ theme: PastureTheme) {
+        currentTheme = theme
+        UserDefaults.standard.set(theme.rawValue, forKey: Self.themeStorageKey)
         hapticManager.digitTapped()
     }
     

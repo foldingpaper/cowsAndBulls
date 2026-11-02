@@ -27,6 +27,9 @@
 		BB00000000000000000012 /* RulesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000012 /* RulesSheetView.swift */; };
 		BB00000000000000000013 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000013 /* VictoryView.swift */; };
 		BB00000000000000000014 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000014 /* QuoteProvider.swift */; };
+		BB00000000000000000015 /* QuoteBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000015 /* QuoteBannerView.swift */; };
+		BB00000000000000000016 /* PastureTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000016 /* PastureTheme.swift */; };
+		BB00000000000000000017 /* PastureThemeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000017 /* PastureThemeSelectorView.swift */; };
 		BB00000000000000000384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000384 /* Assets.xcassets */; };
 		BB00000000000000000386 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000386 /* quotes.json */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,9 @@
 		AA00000000000000000012 /* RulesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesSheetView.swift; sourceTree = "<group>"; };
 		AA00000000000000000013 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
 		AA00000000000000000014 /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
+		AA00000000000000000015 /* QuoteBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteBannerView.swift; sourceTree = "<group>"; };
+		AA00000000000000000016 /* PastureTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureTheme.swift; sourceTree = "<group>"; };
+		AA00000000000000000017 /* PastureThemeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastureThemeSelectorView.swift; sourceTree = "<group>"; };
 		AA00000000000000000384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA00000000000000000385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA00000000000000000386 /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 				AA00000000000000000011 /* MainGameView.swift */,
 				AA00000000000000000012 /* RulesSheetView.swift */,
 				AA00000000000000000013 /* VictoryView.swift */,
+				AA00000000000000000015 /* QuoteBannerView.swift */,
+				AA00000000000000000016 /* PastureTheme.swift */,
+				AA00000000000000000017 /* PastureThemeSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +261,9 @@
 				BB00000000000000000012 /* RulesSheetView.swift in Sources */,
 				BB00000000000000000013 /* VictoryView.swift in Sources */,
 				BB00000000000000000014 /* QuoteProvider.swift in Sources */,
+				BB00000000000000000015 /* QuoteBannerView.swift in Sources */,
+				BB00000000000000000016 /* PastureTheme.swift in Sources */,
+				BB00000000000000000017 /* PastureThemeSelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

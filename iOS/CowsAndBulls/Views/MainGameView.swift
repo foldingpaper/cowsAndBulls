@@ -10,17 +10,34 @@ public struct MainGameView: View {
     public var body: some View {
         ZStack {
             // Background
-            Color.appBackground
+            viewModel.currentTheme.appBackground
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 // Top Header / Navigation Bar
                 headerBar
                 
+                // Rotating Quirky Farm Quote Banner
+                QuoteBannerView(viewModel: viewModel)
+                    .padding(.horizontal)
+                    .padding(.top, 4)
+                    .padding(.bottom, 4)
+                
+                // World Pasture Theme Selector
+                PastureThemeSelectorView(
+                    selectedTheme: $viewModel.currentTheme,
+                    onSelect: { theme in
+                        viewModel.setTheme(theme)
+                    }
+                )
+                .padding(.horizontal)
+                .padding(.bottom, 6)
+                
                 // Attempts Progress Pill
                 attemptsStatusBar
                     .padding(.horizontal)
-                    .padding(.top, 4)
+                    .padding(.top, 2)
+                    .padding(.bottom, 4)
                 
                 // Attempt History Board (Clear View of All Attempts)
                 AttemptBoardView(
@@ -84,6 +101,7 @@ public struct MainGameView: View {
                 secondaryButton: .cancel()
             )
         }
+        .preferredColorScheme(viewModel.currentTheme.preferredColorScheme)
     }
     
     // MARK: - Subviews
@@ -92,10 +110,11 @@ public struct MainGameView: View {
         HStack {
             // Title
             HStack(spacing: 6) {
-                Text("🐮")
+                Text(viewModel.currentTheme.icon)
                     .font(.title2)
                 Text("Cows & Bulls")
                     .font(.headline.bold())
+                    .foregroundColor(viewModel.currentTheme.textColor)
                 Text("🐂")
                     .font(.title2)
             }
@@ -110,9 +129,9 @@ public struct MainGameView: View {
                 }) {
                     Image(systemName: soundManager.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill")
                         .font(.subheadline)
-                        .foregroundColor(soundManager.isMuted ? .secondary : .blue)
+                        .foregroundColor(soundManager.isMuted ? viewModel.currentTheme.secondaryTextColor : viewModel.currentTheme.accentColor)
                         .frame(width: 32, height: 32)
-                        .background(Color.surfaceBackground)
+                        .background(viewModel.currentTheme.surfaceBackground)
                         .clipShape(Circle())
                 }
                 
@@ -122,9 +141,9 @@ public struct MainGameView: View {
                 }) {
                     Image(systemName: "flag.fill")
                         .font(.caption)
-                        .foregroundColor(.orange)
+                        .foregroundColor(viewModel.currentTheme.cowColor)
                         .frame(width: 32, height: 32)
-                        .background(Color.surfaceBackground)
+                        .background(viewModel.currentTheme.surfaceBackground)
                         .clipShape(Circle())
                 }
                 .disabled(viewModel.engine.state.isGameOver)
@@ -135,9 +154,9 @@ public struct MainGameView: View {
                 }) {
                     Image(systemName: "questionmark.circle.fill")
                         .font(.subheadline)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(viewModel.currentTheme.secondaryTextColor)
                         .frame(width: 32, height: 32)
-                        .background(Color.surfaceBackground)
+                        .background(viewModel.currentTheme.surfaceBackground)
                         .clipShape(Circle())
                 }
                 
@@ -147,9 +166,9 @@ public struct MainGameView: View {
                 }) {
                     Image(systemName: "arrow.counterclockwise")
                         .font(.caption.bold())
-                        .foregroundColor(.primary)
+                        .foregroundColor(viewModel.currentTheme.textColor)
                         .frame(width: 32, height: 32)
-                        .background(Color.surfaceBackground)
+                        .background(viewModel.currentTheme.surfaceBackground)
                         .clipShape(Circle())
                 }
             }
