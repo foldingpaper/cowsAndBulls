@@ -1,6 +1,7 @@
 # Project History & Architectural Decisions
 
 This document tracks the evolution, key milestones, and architectural decisions for the **Cows and Bulls** project.
+For a curated showcase of the playful design and UX flourishes implemented along the way, see [`NICE_IDEAS.md`](file:///Users/skand/projects/cowsAndBulls/NICE_IDEAS.md).
 
 ---
 
