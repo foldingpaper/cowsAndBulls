@@ -24,7 +24,7 @@ public struct UnifiedGuessInputBar: View {
                 // 4-Digit Guess Slots
                 HStack(spacing: 6) {
                     ForEach(0..<viewModel.engine.config.codeLength, id: \.self) { index in
-                        let hasDigit = index < viewModel.currentInput.count
+                        let hasDigit = viewModel.currentInput.indices.contains(index)
                         let isNextActive = index == viewModel.currentInput.count
                         let charString = hasDigit ? String(viewModel.currentInput[index]) : ""
                         

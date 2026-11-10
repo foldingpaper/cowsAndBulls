@@ -17,7 +17,7 @@ public struct CurrentGuessInputView: View {
             // 4-Digit Boxes
             HStack(spacing: 12) {
                 ForEach(0..<codeLength, id: \.self) { index in
-                    let hasDigit = index < currentInput.count
+                    let hasDigit = currentInput.indices.contains(index)
                     let isNextActive = index == currentInput.count
                     let charString = hasDigit ? String(currentInput[index]) : ""
                     

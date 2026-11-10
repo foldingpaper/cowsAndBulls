@@ -56,8 +56,7 @@ public struct KeypadView: View {
                     .foregroundColor(viewModel.currentTheme.secondaryTextColor)
                     .cornerRadius(10)
             }
-        } else {
-            let char = key.first!
+        } else if let char = key.first {
             let isUsed = viewModel.isDigitUsed(char)
             
             Button(action: {
