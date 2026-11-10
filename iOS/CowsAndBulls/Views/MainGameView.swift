@@ -122,12 +122,12 @@ public struct MainGameView: View {
     
     private var headerBar: some View {
         HStack {
-            // Title & Pasture Indicator (Tappable for Farm Wisdom & Rumors)
+            // Title (Tappable for Farm Wisdom & Rumors)
             Button(action: {
                 viewModel.showQuoteSheet = true
             }) {
                 HStack(spacing: 5) {
-                    Text(viewModel.currentTheme.icon)
+                    Text("🐮")
                         .font(.title2)
                     Text("Cows & Bulls")
                         .font(.headline.bold())
@@ -230,14 +230,19 @@ public struct MainGameView: View {
     
     private var quoteSheetView: some View {
         VStack(spacing: 18) {
-            // Top Bar
+            // Top Bar with Pasture Identity
             HStack {
                 HStack(spacing: 8) {
-                    Text("🌾")
-                        .font(.title3)
-                    Text("Pasture Rumors & Wisdom")
-                        .font(.headline)
-                        .foregroundColor(viewModel.currentTheme.textColor)
+                    Text(viewModel.currentTheme.icon)
+                        .font(.title2)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Pasture Rumors & Wisdom")
+                            .font(.headline)
+                            .foregroundColor(viewModel.currentTheme.textColor)
+                        Text("\(viewModel.currentTheme.displayName) Pasture")
+                            .font(.caption2)
+                            .foregroundColor(viewModel.currentTheme.secondaryTextColor)
+                    }
                 }
                 Spacer()
                 Button("Done") {
@@ -252,7 +257,7 @@ public struct MainGameView: View {
             VStack(spacing: 14) {
                 // Cow message
                 HStack(alignment: .top, spacing: 10) {
-                    Text(viewModel.currentTheme.icon)
+                    Text("🐮")
                         .font(.system(size: 28))
                         .padding(8)
                         .background(viewModel.currentTheme.cowColor.opacity(0.18))

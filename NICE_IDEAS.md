@@ -46,9 +46,9 @@ This document chronicles the delightful, quirky, and user-centric ideas that too
 ---
 
 ### 5. Header Harmony & Comic Dialogue (Latest Session)
-* **Interactive Header Title `[🐮 Cows & Bulls 🐂]`**: Instead of keeping the navigation title inert, tapping it triggers the "Pasture Rumors & Wisdom" sheet.
+* **Interactive Header Title `[🐮 Cows & Bulls 🐂]`**: Converted the navigation title into a tappable button that summons the rumor sheet. Kept the classic bovine duo (`🐮` and `🐂`) permanently framing the title without being replaced by theme icons.
 * **Eliminating Header Crowding (4 Icons vs 5)**: Removed the standalone `🌾` button. By folding the quote trigger directly into the active title, the right-hand action buttons dropped from 5 to 4, freeing ~60pt of horizontal space and ensuring the title never wraps across two lines on any iPhone screen.
-* **Farm Side Banter Dialogue**: Rather than displaying quotes as a sterile block of text, the sheet opens as a comic dialogue exchange between **Cow 🐮** (*"Psst... heard any fresh farm gossip?"*) and **Bull 🐂** (delivering the rumor inside a speech bubble), complete with an **"Overhear Another Rumor 🔄"** button.
+* **Farm Side Banter Dialogue**: Rather than displaying quotes as a sterile block of text, the sheet opens as a comic dialogue exchange between **Cow 🐮** (*"Psst... heard any fresh farm gossip?"*) and **Bull 🐂** (delivering the rumor inside a speech bubble) with an **"Overhear Another Rumor 🔄"** button. The active pasture's identity (e.g. `🚜 Barnyard Pasture`) is housed cleanly in the sheet's top header bar.
 * **Quirky Rounded Typography**: Replaced formal `.serif` italics with friendly `.system(..., design: .rounded)` semibold typography, maintaining the humorous, cartoon tone.
 * **Keypad Expansion Auto-Scroll**: When reopening the collapsed keypad via the keyboard button, the board auto-scrolls smoothly so the most recent attempt is never concealed behind the incoming keypad.
 
