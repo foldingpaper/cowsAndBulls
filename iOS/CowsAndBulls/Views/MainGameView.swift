@@ -285,7 +285,7 @@ public struct MainGameView: View {
                         Text("Bull")
                             .font(.caption.bold())
                             .foregroundColor(viewModel.currentTheme.bullColor)
-                        Text("\"\(viewModel.currentQuote)\"")
+                        Text(viewModel.currentQuote)
                             .font(.system(size: 15, weight: .semibold, design: .rounded))
                             .foregroundColor(viewModel.currentTheme.textColor)
                             .lineSpacing(3)
