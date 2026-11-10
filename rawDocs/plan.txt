@@ -29,3 +29,11 @@
 - New Zealand Pastures
 - Texas / Outback Ranch
 - Midnight Pasture
+
+# UX & Screen Real-Estate Overhaul
+- Progressive Disclosure: Two-phase layout (Phase 1 Hero Stage for Attempt 0, Phase 2 Codebreaker's Desk for Attempt 1+).
+- Hero Stage: Prominent quote typography, wandering animated cows and bulls, and pasture selector before first guess.
+- Merged Input Bar: 4-digit cards and "Lock In" button unified into a single horizontal bar.
+- Collapsible Keypad: iPad-like dock with collapse button [⌵] and auto-collapse on board scroll.
+- Chronological Auto-Scroll: Clean top-to-bottom deduction journal with rock-solid auto-scroll (no sort toggles to avoid clutter).
+- Header Quote Dialog: Tappable title [🐮 Cows & Bulls 🐂] opens comic banter sheet between Cow & Bull, dropping the separate 🌾 button to prevent title line wraps.

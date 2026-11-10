@@ -12,6 +12,10 @@ public class GameViewModel: ObservableObject {
     @Published public var showVictoryModal: Bool = false
     @Published public var showGameOverModal: Bool = false
     @Published public var showRulesSheet: Bool = false
+    @Published public var showQuoteSheet: Bool = false
+    
+    // UI Layout State
+    @Published public var isKeypadCollapsed: Bool = false
     
     // Customization
     @Published public var isCartoonMode: Bool = true // Cartoon icons default on iOS per plan.txt
@@ -88,7 +92,21 @@ public class GameViewModel: ObservableObject {
         errorMessage = nil
         showVictoryModal = false
         showGameOverModal = false
+        isKeypadCollapsed = false
         currentQuote = quoteProvider.randomQuote(excluding: currentQuote)
+        hapticManager.digitTapped()
+    }
+    
+    /// Toggles the iPad-style keypad collapsed/docked state.
+    public func toggleKeypadCollapse() {
+        isKeypadCollapsed.toggle()
+        hapticManager.digitTapped()
+    }
+    
+    /// Ensures the keypad is expanded (e.g. when tapping input slots).
+    public func expandKeypad() {
+        guard isKeypadCollapsed else { return }
+        isKeypadCollapsed = false
         hapticManager.digitTapped()
     }
     

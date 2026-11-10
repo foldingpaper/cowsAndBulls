@@ -125,7 +125,41 @@ Given that the target is specifically iOS and the game engine is already impleme
 
 ---
 
-## 7. Status & Future Enhancements
+## 7. Architectural Decision Record (ADR): Responsive Dynamic Layout & Progressive Disclosure
+
+### Date: 2026-11-02
+### Status: **Accepted**
+
+### Context
+On standard mobile viewports (~844pt height), having permanent top chrome (Header, Quote Banner, Pasture Switcher, Attempt Counter) alongside a fixed 4-row keypad and full-width "Lock In" button consumed ~490pt of vertical space. This constrained the Attempt Board to only ~270pt (showing only 3–4 attempts before requiring scrolling). Furthermore, the quirky quotes lacked a grand stage on initial round startup.
+
+### Architectural Decisions
+
+1. **Two-Phase Progressive Disclosure**:
+   * **Phase 1: "The Pasture Welcome" (Attempt 0)**: The entire board area transforms into a vibrant **Hero Stage** showcasing rich quote typography, animated wandering cows & bulls (`🐮`, `🐂`, `🌾`), and the full World Pasture theme switcher.
+   * **Phase 2: "The Codebreaker's Desk" (Attempt 1+)**: Upon submitting the first guess, the Hero Stage smoothly scales and fades away, giving 100% of the screen over to the Attempt History Board.
+2. **Unified Input & Lock-In Bar**:
+   * Combines the 4-digit input slots and the prominent `[ 🔒 Lock In ]` button into a single horizontal row (`[ 4 ] [ 8 ] [ 1 ] [ _ ]  [ 🔒 Lock In ]  [ ⌵ ]`), reclaiming ~50pt of vertical space.
+3. **Collapsible iPad-Style Keypad Dock**:
+   * Supports an expanded typing state and a collapsed dock state.
+   * Collapsing the keypad expands the Attempt Board from ~320pt to **~550pt** (fitting 8–10 attempts simultaneously).
+   * Tapping or dragging through previous attempts on the board automatically dismisses/collapses the keypad.
+   * The merged input bar remains docked at the bottom even when collapsed, allowing instant lock-in or one-tap keypad reopening.
+4. **Chronological Journal with Rock-Solid Auto-Scroll**:
+   * Preserves the top-to-bottom deduction timeline (`#01` down to `#20`).
+   * Eliminates sort-order toggle buttons to avoid cognitive clutter.
+   * Fixes auto-scroll reliability by using standard `VStack` and a bottom scroll anchor.
+5. **Active Tappable Header Title & Dialogue Modal**:
+   * The header title `[🐮 Cows & Bulls 🐂]` is interactive. Tapping it summons the "Pasture Rumors & Wisdom" sheet.
+   * Dropped the separate `🌾` icon from the top chrome, reducing right-hand actions to 4 buttons and freeing over 200pt of horizontal space so the title never wraps onto a second line on any screen size.
+   * The quote sheet is styled as comic dialogue/banter between Cow 🐮 and Bull 🐂, retaining the playful farm dynamic with an option to "Overhear Another Rumor".
+   * Quotes now use friendly, rounded semibold typography (`.rounded`) instead of stiff serif italics.
+6. **Keypad Expansion Auto-Scroll**:
+   * Tapping the keyboard icon to restore the keypad triggers an automatic scroll animation, ensuring recent attempts remain fully visible above the raised keypad.
+
+---
+
+## 8. Status & Future Enhancements
 
 * [x] Core game engine implementation and unit tests (26 passing tests).
 * [x] Feature-complete Swift CLI game with audio, board rendering, and cartoon toggles.
@@ -133,7 +167,10 @@ Given that the target is specifically iOS and the game engine is already impleme
 * [x] Native SwiftUI project scaffolding and implementation in [`iOS/`](file:///Users/skand/projects/cowsAndBulls/iOS).
 * [x] Verified compilation across iOS 18 SDK and added shared scheme [`CowsAndBulls.xcscheme`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls.xcodeproj/xcshareddata/xcschemes/CowsAndBulls.xcscheme).
 * [x] Externalized quirky farm quotes in JSON and CLI integration.
-* [x] Interactive rotating quote banner in iOS app (`QuoteBannerView`).
 * [x] World Pasture Theme Selector with 6 presets and persistent storage.
-* [ ] Run and verify iOS app on iPhone 16e simulator.
+* [x] Custom 1024×1024 App Icon with playful farm duo and padlock.
+* [x] Implement Progressive Disclosure Hero Stage for Attempt 0 ([`HeroStageView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/HeroStageView.swift)).
+* [x] Implement Unified Merged Input & Lock-in Bar with iPad-style collapsible keypad ([`UnifiedGuessInputBar.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/UnifiedGuessInputBar.swift), [`KeypadView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/KeypadView.swift)).
+* [x] Implement rock-solid chronological auto-scroll & scroll-to-dismiss gesture on attempt board ([`AttemptBoardView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/AttemptBoardView.swift)).
+* [x] Implement interactive title trigger and Cow & Bull dialogue sheet in [`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift).
 * [ ] (Optional) Computer AI Solver / reverse mode (where player sets the secret and computer guesses).

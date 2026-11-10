@@ -23,9 +23,8 @@ public struct QuoteBannerView: View {
                     .font(.subheadline)
                 
                 Text(viewModel.currentQuote)
-                    .font(.caption)
-                    .foregroundColor(viewModel.currentTheme.textColor.opacity(0.88))
-                    .italic()
+                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .foregroundColor(viewModel.currentTheme.textColor.opacity(0.9))
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
