@@ -48,7 +48,9 @@ public struct HeroStageView: View {
                 HStack(spacing: 6) {
                     Image(systemName: "hand.tap.fill")
                         .font(.caption2)
-                    Text("Type 4 unique digits below and lock in your first guess!")
+                    Text(viewModel.isKeypadCollapsed
+                         ? "Tap the code slots below to open the keypad and start guessing!"
+                         : "Type 4 unique digits below and lock in your first guess!")
                         .font(.caption)
                 }
                 .foregroundColor(viewModel.currentTheme.secondaryTextColor)

@@ -15,7 +15,7 @@ public class GameViewModel: ObservableObject {
     @Published public var showQuoteSheet: Bool = false
     
     // UI Layout State
-    @Published public var isKeypadCollapsed: Bool = false
+    @Published public var isKeypadCollapsed: Bool = true
     
     // Customization
     @Published public var isCartoonMode: Bool = true // Cartoon icons default on iOS per plan.txt
@@ -92,7 +92,7 @@ public class GameViewModel: ObservableObject {
         errorMessage = nil
         showVictoryModal = false
         showGameOverModal = false
-        isKeypadCollapsed = false
+        isKeypadCollapsed = true
         currentQuote = quoteProvider.randomQuote(excluding: currentQuote)
         hapticManager.digitTapped()
     }

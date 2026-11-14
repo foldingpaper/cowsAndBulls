@@ -122,9 +122,11 @@ public struct MainGameView: View {
     
     private var headerBar: some View {
         HStack {
-            // Title (Tappable for Farm Wisdom & Rumors)
+            // Title (Tappable for Farm Wisdom & Rumors only in Phase 2)
             Button(action: {
-                viewModel.showQuoteSheet = true
+                if !viewModel.attempts.isEmpty {
+                    viewModel.showQuoteSheet = true
+                }
             }) {
                 HStack(spacing: 5) {
                     Text("🐮")
@@ -139,7 +141,12 @@ public struct MainGameView: View {
                 }
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Cows and Bulls, tap for Farm Rumors and Wisdom")
+            .disabled(viewModel.attempts.isEmpty)
+            .accessibilityLabel(
+                viewModel.attempts.isEmpty
+                    ? "Cows and Bulls"
+                    : "Cows and Bulls, tap for Farm Rumors and Wisdom"
+            )
             
             Spacer()
             
