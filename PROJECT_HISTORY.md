@@ -187,6 +187,10 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
     * Upper 50%: Big expressive character portraits of Cow (black-and-white Holstein spots, sweet pink muzzle) and Bull (solid warm amber coat, dark brown muzzle, horns, brass nose ring) resting happily on the fence rail under sunny skies.
 * **App Store Submission Readiness**:
   * Authored comprehensive launch guide [`APP_STORE_SUBMISSION_CHECKLIST.md`](file:///Users/skand/projects/cowsAndBulls/APP_STORE_SUBMISSION_CHECKLIST.md) covering simulator screenshot specifications ($1290 \times 2796$ px), 4-slide storyline, ready-to-copy metadata (keywords, descriptions, age rating), offline privacy policy, and Xcode archiving steps.
+* **Dynamic Character Banter Expansion (1,296 Unique Pairings)**:
+  * Expanded dialogue pools to **36 Cow openers** and **36 Bull rumors/quotes** across [`QuoteProvider.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Services/QuoteProvider.swift) and [`quotes.json`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Resources/quotes.json).
+  * Styled Cow with witty, compact 1–2 line prompts ("I love how you pause to look wise right before guessing wrong") and Bull with humorous 2–4 line ranch theories ("don't moo-ve those digits", pasture physics, and rooster bets).
+  * Yields $36 \times 36 = 1,296$ unique dialogue combinations across the Hero Stage and header dialogue sheet.
 
 ---
 
