@@ -19,8 +19,8 @@ public struct HeroStageView: View {
                 pastureMeadowView
                     .padding(.top, 10)
                 
-                // Prominent Hero Quote Card
-                heroQuoteCard
+                // Prominent Hero Banter Card
+                heroBanterCard
                     .padding(.horizontal)
                 
                 // Pasture Theme Switcher Section
@@ -88,7 +88,7 @@ public struct HeroStageView: View {
             
             // Meadow Centerpiece
             VStack(spacing: 4) {
-                Text("🌾 🌻 🌾")
+                Text("🌾 \(viewModel.currentTheme.icon) 🌾")
                     .font(.title3)
                 Text(viewModel.currentTheme.displayName)
                     .font(.subheadline.bold())
@@ -113,47 +113,110 @@ public struct HeroStageView: View {
         .padding(.vertical, 8)
     }
     
-    private var heroQuoteCard: some View {
+    private var heroBanterCard: some View {
         Button(action: {
-            withAnimation(.easeInOut(duration: 0.3)) {
+            withAnimation(.easeInOut(duration: 0.25)) {
                 viewModel.cycleQuote(withHaptic: true)
             }
         }) {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 12) {
+                // Header with Pasture Theme Identity
                 HStack {
                     HStack(spacing: 6) {
-                        Text("🌾")
+                        Text(viewModel.currentTheme.icon)
                             .font(.subheadline)
-                        Text("FARM RUMOR & WISDOM")
-                            .font(.system(size: 11, weight: .bold))
-                            .tracking(1.4)
-                            .foregroundColor(viewModel.currentTheme.accentColor)
+                        VStack(alignment: .leading, spacing: 1) {
+                            Text("PASTURE RUMORS & WISDOM")
+                                .font(.system(size: 10, weight: .bold))
+                                .tracking(1.2)
+                                .foregroundColor(viewModel.currentTheme.accentColor)
+                            Text("\(viewModel.currentTheme.displayName) Pasture")
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundColor(viewModel.currentTheme.secondaryTextColor)
+                        }
                     }
                     
                     Spacer()
                     
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(viewModel.currentTheme.secondaryTextColor)
+                    HStack(spacing: 4) {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                            .font(.system(size: 11, weight: .semibold))
+                        Text("Overhear")
+                            .font(.caption2.bold())
+                    }
+                    .foregroundColor(viewModel.currentTheme.accentColor)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(viewModel.currentTheme.accentColor.opacity(0.12))
+                    .cornerRadius(12)
                 }
                 
-                Text("\"\(viewModel.currentQuote)\"")
-                    .font(.system(size: 15, weight: .semibold, design: .rounded))
-                    .foregroundColor(viewModel.currentTheme.textColor)
-                    .lineSpacing(4)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .id(viewModel.currentQuote)
-                    .transition(.opacity.combined(with: .scale(scale: 0.98)))
+                // Comic Dialogue Banter
+                VStack(spacing: 10) {
+                    // Cow message
+                    HStack(alignment: .top, spacing: 8) {
+                        Text("🐮")
+                            .font(.system(size: 24))
+                            .padding(6)
+                            .background(viewModel.currentTheme.cowColor.opacity(0.18))
+                            .clipShape(Circle())
+                        
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Cow")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(viewModel.currentTheme.cowColor)
+                            Text("Psst... heard any fresh pasture rumors?")
+                                .font(.system(size: 13, weight: .medium, design: .rounded))
+                                .foregroundColor(viewModel.currentTheme.textColor)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 7)
+                                .background(viewModel.currentTheme.surfaceBackground)
+                                .cornerRadius(12)
+                        }
+                        Spacer(minLength: 16)
+                    }
+                    
+                    // Bull response with active quote (unquoted)
+                    HStack(alignment: .top, spacing: 8) {
+                        Spacer(minLength: 16)
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text("Bull")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(viewModel.currentTheme.bullColor)
+                            Text(viewModel.currentQuote)
+                                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                                .foregroundColor(viewModel.currentTheme.textColor)
+                                .lineSpacing(3)
+                                .multilineTextAlignment(.leading)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .background(viewModel.currentTheme.accentColor.opacity(0.12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(viewModel.currentTheme.accentColor.opacity(0.25), lineWidth: 1)
+                                )
+                                .cornerRadius(12)
+                                .id(viewModel.currentQuote)
+                                .transition(.opacity.combined(with: .scale(scale: 0.98)))
+                        }
+                        
+                        Text("🐂")
+                            .font(.system(size: 24))
+                            .padding(6)
+                            .background(viewModel.currentTheme.bullColor.opacity(0.18))
+                            .clipShape(Circle())
+                    }
+                }
                 
+                // Friendly subtle footer
                 HStack {
                     Spacer()
-                    Text("Tap to shuffle rumor ↻")
+                    Text("Tap card to overhear another rumor ↻")
                         .font(.caption2)
-                        .foregroundColor(viewModel.currentTheme.secondaryTextColor.opacity(0.8))
+                        .foregroundColor(viewModel.currentTheme.secondaryTextColor.opacity(0.7))
                 }
             }
-            .padding(16)
+            .padding(14)
             .background(viewModel.currentTheme.cardBackground)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
@@ -163,6 +226,6 @@ public struct HeroStageView: View {
             .shadow(color: Color.black.opacity(0.04), radius: 6, y: 3)
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("Farm rumor: \(viewModel.currentQuote). Tap to shuffle.")
+        .accessibilityLabel("Pasture rumor dialogue between Cow and Bull: \(viewModel.currentQuote). Tap to shuffle.")
     }
 }
