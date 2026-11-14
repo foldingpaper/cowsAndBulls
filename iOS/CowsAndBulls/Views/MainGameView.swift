@@ -50,8 +50,10 @@ public struct MainGameView: View {
                     .transition(.opacity)
                 }
                 
-                Divider()
-                    .padding(.vertical, 2)
+                Rectangle()
+                    .fill(viewModel.currentTheme.inputBorder)
+                    .frame(height: 1)
+                    .padding(.vertical, 3)
                 
                 // Docked Unified Guess & Lock Bar (Always visible)
                 UnifiedGuessInputBar(viewModel: viewModel)

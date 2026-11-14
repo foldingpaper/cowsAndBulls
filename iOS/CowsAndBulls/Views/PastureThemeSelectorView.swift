@@ -49,7 +49,7 @@ public struct PastureThemeSelectorView: View {
                         )
                         .overlay(
                             RoundedRectangle(cornerRadius: 14)
-                                .stroke(isSelected ? Color.clear : theme.borderSeparator.opacity(0.5), lineWidth: 0.5)
+                                .stroke(isSelected ? Color.clear : theme.borderSeparator, lineWidth: 1)
                         )
                     }
                     .buttonStyle(.plain)

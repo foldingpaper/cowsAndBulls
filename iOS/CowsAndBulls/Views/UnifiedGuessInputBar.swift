@@ -32,12 +32,12 @@ public struct UnifiedGuessInputBar: View {
                             .font(.system(size: 20, weight: .bold, design: .monospaced))
                             .foregroundColor(viewModel.currentTheme.textColor)
                             .frame(width: 38, height: 44)
-                            .background(viewModel.currentTheme.cardBackground)
+                            .background(viewModel.currentTheme.surfaceBackground)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(
-                                        isNextActive ? viewModel.currentTheme.accentColor : viewModel.currentTheme.borderSeparator.opacity(0.4),
-                                        lineWidth: isNextActive ? 2 : 1
+                                        isNextActive ? viewModel.currentTheme.accentColor : viewModel.currentTheme.inputBorder,
+                                        lineWidth: isNextActive ? 2 : 1.5
                                     )
                             )
                             .cornerRadius(10)
@@ -98,7 +98,7 @@ public struct UnifiedGuessInputBar: View {
                         .background(viewModel.currentTheme.surfaceBackground)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(viewModel.currentTheme.borderSeparator.opacity(0.5), lineWidth: 1)
+                                .stroke(viewModel.currentTheme.borderSeparator, lineWidth: 1)
                         )
                         .cornerRadius(10)
                 }

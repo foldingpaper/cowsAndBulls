@@ -52,6 +52,7 @@ This document chronicles the delightful, quirky, and user-centric ideas that too
 * **Hero Screen Banter & Meadow Theme Centering**: Mirrored the comic dialogue format directly onto the Phase 1 Hero Screen, replacing the formal quote block with the Cow & Bull banter card displaying the active pasture name and icon. Centered the animated meadow centerpiece around the active theme symbol (`🌾 [Theme Icon] 🌾`).
 * **Quirky Rounded Typography**: Replaced formal `.serif` italics with friendly `.system(..., design: .rounded)` semibold typography, maintaining the humorous, cartoon tone.
 * **Keypad Expansion Auto-Scroll**: When reopening the collapsed keypad via the keyboard button, the board auto-scrolls smoothly so the most recent attempt is never concealed behind the incoming keypad.
+* **Calibrated Border & Control Contrast**: Upgraded the Original theme's border tones from translucent `UIColor.separator` to native `UIColor.systemGray4` on keypad keys and `UIColor.systemGray3` on code slots (`lineWidth: 1.5`), replaced the faint default `Divider()` above the keypad with a crisp 1pt themed separator, and gave code slots `surfaceBackground` fill so each slot punches cleanly off the canvas on physical OLED displays.
 
 ---
 

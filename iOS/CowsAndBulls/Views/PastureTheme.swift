@@ -215,6 +215,16 @@ public enum PastureTheme: String, CaseIterable, Identifiable {
         }
     }
     
+    /// Distinct border for input fields, code slots, and section dividers
+    public var inputBorder: Color {
+        switch self {
+        case .original:
+            return Color.inputBorder
+        default:
+            return borderSeparator
+        }
+    }
+    
     /// Preferred ColorScheme (e.g. .dark for midnight, nil for following system)
     public var preferredColorScheme: ColorScheme? {
         switch self {

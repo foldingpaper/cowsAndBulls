@@ -43,6 +43,10 @@ public struct KeypadView: View {
                     .background(viewModel.currentTheme.cardBackground)
                     .foregroundColor(viewModel.currentTheme.secondaryTextColor)
                     .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(viewModel.currentTheme.borderSeparator, lineWidth: 1)
+                    )
             }
         } else if key == "delete" {
             Button(action: {
@@ -55,6 +59,10 @@ public struct KeypadView: View {
                     .background(viewModel.currentTheme.cardBackground)
                     .foregroundColor(viewModel.currentTheme.secondaryTextColor)
                     .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(viewModel.currentTheme.borderSeparator, lineWidth: 1)
+                    )
             }
         } else if let char = key.first {
             let isUsed = viewModel.isDigitUsed(char)
@@ -80,8 +88,8 @@ public struct KeypadView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(
-                                isUsed ? Color.clear : viewModel.currentTheme.borderSeparator.opacity(0.5),
-                                lineWidth: 0.5
+                                isUsed ? Color.clear : viewModel.currentTheme.borderSeparator,
+                                lineWidth: 1
                             )
                     )
             }
