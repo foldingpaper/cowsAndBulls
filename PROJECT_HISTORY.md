@@ -215,4 +215,5 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
 * [x] Unified Forward Restart button with playful bovine confirmation dialog ([`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift)).
 * [x] Physical device stability & zero-crash resilience audit ([`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md)).
 * [x] App Store submission readiness guide and metadata ([`APP_STORE_SUBMISSION_CHECKLIST.md`](file:///Users/skand/projects/cowsAndBulls/APP_STORE_SUBMISSION_CHECKLIST.md)).
+* [x] Post-launch enhancement roadmap & strategic critique ([`LEVEL_IT_UP.md`](file:///Users/skand/projects/cowsAndBulls/LEVEL_IT_UP.md)).
 * [ ] (Optional) Computer AI Solver / reverse mode (where player sets the secret and computer guesses).
