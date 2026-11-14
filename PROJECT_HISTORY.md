@@ -175,7 +175,22 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
 
 ---
 
-## 9. Status & Future Enhancements
+## 9. App Icon Redesign & App Store Preparation (Completed)
+
+* **Date**: 2026-11-13
+* **App Icon Redesign**:
+  * Evaluated small-scale mobile home screen readability and addressed the miniature padlock dial blur issue.
+  * Replaced the original distant-scene icon with **"Barn-Fence Duo: Ultra-Wide Matte Lock Bar"** ([`AppIcon-1024.png`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png)).
+  * Features:
+    * Lower 50%: Sturdy rustic red barn-timber fence anchoring an elongated horizontal rectangular combination vault bar (~3:1 aspect ratio) spanning ~75% across the fence.
+    * 4 bold mechanical tumbler dials (`1-9-4-7`) in a warm matte brushed antique brass finish with deeply engraved numerals and zero specular glare.
+    * Upper 50%: Big expressive character portraits of Cow (black-and-white Holstein spots, sweet pink muzzle) and Bull (solid warm amber coat, dark brown muzzle, horns, brass nose ring) resting happily on the fence rail under sunny skies.
+* **App Store Submission Readiness**:
+  * Authored comprehensive launch guide [`APP_STORE_SUBMISSION_CHECKLIST.md`](file:///Users/skand/projects/cowsAndBulls/APP_STORE_SUBMISSION_CHECKLIST.md) covering simulator screenshot specifications ($1290 \times 2796$ px), 4-slide storyline, ready-to-copy metadata (keywords, descriptions, age rating), offline privacy policy, and Xcode archiving steps.
+
+---
+
+## 10. Status & Future Enhancements
 
 * [x] Core game engine implementation and unit tests (26 passing tests).
 * [x] Feature-complete Swift CLI game with audio, board rendering, and cartoon toggles.
@@ -184,10 +199,11 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
 * [x] Verified compilation across iOS 18 SDK and added shared scheme [`CowsAndBulls.xcscheme`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls.xcodeproj/xcshareddata/xcschemes/CowsAndBulls.xcscheme).
 * [x] Externalized quirky farm quotes in JSON and CLI integration.
 * [x] World Pasture Theme Selector with 6 presets and persistent storage.
-* [x] Custom 1024×1024 App Icon with playful farm duo and padlock.
+* [x] Custom 1024×1024 App Icon with playful farm duo and ultra-wide matte combination lock ([`AppIcon-1024.png`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png)).
 * [x] Implement Progressive Disclosure Hero Stage for Attempt 0 ([`HeroStageView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/HeroStageView.swift)).
 * [x] Implement Unified Merged Input & Lock-in Bar with iPad-style collapsible keypad ([`UnifiedGuessInputBar.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/UnifiedGuessInputBar.swift), [`KeypadView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/KeypadView.swift)).
 * [x] Implement rock-solid chronological auto-scroll & scroll-to-dismiss gesture on attempt board ([`AttemptBoardView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/AttemptBoardView.swift)).
 * [x] Implement interactive title trigger and Cow & Bull dialogue sheet in [`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift).
 * [x] Physical device stability & zero-crash resilience audit ([`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md)).
+* [x] App Store submission readiness guide and metadata ([`APP_STORE_SUBMISSION_CHECKLIST.md`](file:///Users/skand/projects/cowsAndBulls/APP_STORE_SUBMISSION_CHECKLIST.md)).
 * [ ] (Optional) Computer AI Solver / reverse mode (where player sets the secret and computer guesses).
