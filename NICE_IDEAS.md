@@ -57,6 +57,18 @@ This document chronicles the delightful, quirky, and user-centric ideas that too
 
 ---
 
+### 6. Polish & Launch Readiness: Forward Restart & Massive Banter Pool
+* **Collapsing "Concede" & "New Game" into Unified Forward Restart (`arrow.clockwise`)**:
+  * *The Problem*: The header originally had two overlapping destructive actions: a surrender flag (which revealed the secret) and an undo-arrow (which instantly wiped the game with no confirmation). The counterclockwise undo-arrow looked like "undo last move", and the orange surrender flag created visual confusion against white backgrounds.
+  * *The Solution*: Collapsed both into a single **Forward Restart Arrow (`arrow.clockwise`)**, trimming header actions from 4 buttons to **3 clean buttons** (`[🔊 Sound]  [❓ Rules]  [🔄 Restart]`).
+  * *Accidental Wipe Protection*: Disabled on Attempt 0 (where resetting is a no-op). During an active game, tapping it prompts a characterful confirmation dialog (*"Bull says: Are you sure, partner? You're just getting warmed up!"*), delivering a fun pride-check before revealing the code and restarting.
+* **Massive Banter Expansion (1,296 Unique Pairings)**:
+  * Expanded the dialogue pool to **36 witty Cow openers** (compact 1–2 lines) and **36 humorous Bull rumors** (rich 2–4 lines with absurd ranch physics, rooster bets, and silo conspiracies), generating $36 \times 36 = 1,296$ unique dialogue combinations.
+* **App Icon Redesign ("Barn-Fence Duo: Ultra-Wide Matte Lock Bar")**:
+  * Resolved the small-scale 60×60pt dial blur by redesigning the icon with a prominent lower-half rustic red fence, an ultra-wide horizontal brass tumbler lock bar (~3:1 aspect ratio) with deeply etched dark digits (`1-9-4-7`), and big expressive Cow & Bull faces resting on the top rail.
+
+---
+
 ## 💡 Summary Matrix of "Nice" Ideas
 
 | Milestone | Idea | User Experience Benefit |
@@ -73,3 +85,5 @@ This document chronicles the delightful, quirky, and user-centric ideas that too
 | **Header** | Interactive Title Trigger | Drops a redundant icon, fixes line wrapping, and adds intuitive interaction. |
 | **Lore** | Cow & Bull Comic Banter Sheet | Turns static quote reading into lively character dialogue. |
 | **Typography** | Rounded System Fonts | Replaced stiff serif italics with playful, friendly typeface. |
+| **Header** | Unified Forward Restart (`arrow.clockwise`) | Collapses Concede & New Game into 1 safe, state-aware button with playful confirmation. |
+| **Lore** | 1,296 Banter Pairings | Expands dialogue pool to 36 Cow + 36 Bull lines for endless replay variety. |

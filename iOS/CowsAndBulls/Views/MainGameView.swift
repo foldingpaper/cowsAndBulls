@@ -109,12 +109,12 @@ public struct MainGameView: View {
         }
         .alert(isPresented: $viewModel.showConcedeAlert) {
             Alert(
-                title: Text("Concede Round?"),
-                message: Text("Surrendering will immediately end this game and reveal the secret code."),
-                primaryButton: .destructive(Text("Concede & Reveal")) {
+                title: Text("Start a Fresh Round?"),
+                message: Text("Bull says: Are you sure, partner? You're just getting warmed up! Ending now will reveal the farmer's secret."),
+                primaryButton: .destructive(Text("Reveal & Restart")) {
                     viewModel.confirmConcede()
                 },
-                secondaryButton: .cancel()
+                secondaryButton: .cancel(Text("Keep Guessing"))
             )
         }
         .preferredColorScheme(viewModel.currentTheme.preferredColorScheme)
@@ -167,20 +167,6 @@ public struct MainGameView: View {
                 }
                 .accessibilityLabel(soundManager.isMuted ? "Unmute Sound" : "Mute Sound")
                 
-                // Concede Button (Only active when game is in progress)
-                Button(action: {
-                    viewModel.showConcedeAlert = true
-                }) {
-                    Image(systemName: "flag.fill")
-                        .font(.caption)
-                        .foregroundColor(viewModel.currentTheme.cowColor)
-                        .frame(width: 32, height: 32)
-                        .background(viewModel.currentTheme.surfaceBackground)
-                        .clipShape(Circle())
-                }
-                .disabled(viewModel.engine.state.isGameOver)
-                .accessibilityLabel("Concede Round")
-                
                 // Help Button
                 Button(action: {
                     viewModel.showRulesSheet = true
@@ -194,18 +180,23 @@ public struct MainGameView: View {
                 }
                 .accessibilityLabel("Game Rules")
                 
-                // New Game Button
+                // Restart / New Round Button (Active during game in progress)
                 Button(action: {
-                    viewModel.startNewGame()
+                    viewModel.showConcedeAlert = true
                 }) {
-                    Image(systemName: "arrow.counterclockwise")
+                    Image(systemName: "arrow.clockwise")
                         .font(.caption.bold())
-                        .foregroundColor(viewModel.currentTheme.textColor)
+                        .foregroundColor(
+                            viewModel.attempts.isEmpty
+                                ? viewModel.currentTheme.secondaryTextColor.opacity(0.35)
+                                : viewModel.currentTheme.textColor
+                        )
                         .frame(width: 32, height: 32)
                         .background(viewModel.currentTheme.surfaceBackground)
                         .clipShape(Circle())
                 }
-                .accessibilityLabel("New Game")
+                .disabled(viewModel.attempts.isEmpty || viewModel.engine.state.isGameOver)
+                .accessibilityLabel("Restart Round")
             }
         }
         .padding(.horizontal)

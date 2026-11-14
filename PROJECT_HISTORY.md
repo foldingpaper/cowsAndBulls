@@ -191,6 +191,10 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
   * Expanded dialogue pools to **36 Cow openers** and **36 Bull rumors/quotes** across [`QuoteProvider.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Services/QuoteProvider.swift) and [`quotes.json`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Resources/quotes.json).
   * Styled Cow with witty, compact 1–2 line prompts ("I love how you pause to look wise right before guessing wrong") and Bull with humorous 2–4 line ranch theories ("don't moo-ve those digits", pasture physics, and rooster bets).
   * Yields $36 \times 36 = 1,296$ unique dialogue combinations across the Hero Stage and header dialogue sheet.
+* **Header Streamlining & Unified Forward Restart (`arrow.clockwise`)**:
+  * Collapsed redundant "Concede" (flag) and unconfirmed "New Game" (counterclockwise undo arrow) into a single, safe **Forward Restart Arrow (`arrow.clockwise`)** in [`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift).
+  * Trims header actions from 4 buttons to **3 clean buttons** (`[🔊 Sound]  [❓ Rules]  [🔄 Restart]`).
+  * Protects players from accidental wipes by requiring confirmation mid-game, delivering a fun bovine challenge (*"Bull says: Are you sure, partner? You're just getting warmed up!"*), and remaining disabled on Attempt 0 where resetting is a no-op.
 
 ---
 
@@ -208,6 +212,7 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
 * [x] Implement Unified Merged Input & Lock-in Bar with iPad-style collapsible keypad ([`UnifiedGuessInputBar.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/UnifiedGuessInputBar.swift), [`KeypadView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/KeypadView.swift)).
 * [x] Implement rock-solid chronological auto-scroll & scroll-to-dismiss gesture on attempt board ([`AttemptBoardView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/AttemptBoardView.swift)).
 * [x] Implement interactive title trigger and Cow & Bull dialogue sheet in [`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift).
+* [x] Unified Forward Restart button with playful bovine confirmation dialog ([`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift)).
 * [x] Physical device stability & zero-crash resilience audit ([`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md)).
 * [x] App Store submission readiness guide and metadata ([`APP_STORE_SUBMISSION_CHECKLIST.md`](file:///Users/skand/projects/cowsAndBulls/APP_STORE_SUBMISSION_CHECKLIST.md)).
 * [ ] (Optional) Computer AI Solver / reverse mode (where player sets the secret and computer guesses).
