@@ -1,7 +1,8 @@
 # Project History & Architectural Decisions
 
 This document tracks the evolution, key milestones, and architectural decisions for the **Cows and Bulls** project.
-For a curated showcase of the playful design and UX flourishes implemented along the way, see [`NICE_IDEAS.md`](file:///Users/skand/projects/cowsAndBulls/NICE_IDEAS.md).
+* For a curated showcase of playful UX flourishes, see [`NICE_IDEAS.md`](file:///Users/skand/projects/cowsAndBulls/NICE_IDEAS.md).
+* For the pre-device deployment stability verification, see [`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md).
 
 ---
 
@@ -160,7 +161,20 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
 
 ---
 
-## 8. Status & Future Enhancements
+## 8. Physical Device Readiness & Stability Audit (Completed)
+
+* **Date**: 2026-11-09
+* **Scope**: Comprehensive pre-deployment stability audit across all iOS presentation, service, and core layers documented in [`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md).
+* **Key Hardening Actions**:
+  * **Force-Unwrap Elimination**: Converted all optional extractions to safe `if let` bindings, ensuring zero runtime force-unwraps.
+  * **Index Bounds Resilience**: Protected digit box indices using `indices.contains(index)` to prevent out-of-bounds crashes during rapid typing/deleting.
+  * **Audio & Haptic Isolation**: Confirmed `AVAudioSession` category configuration is protected by `do/catch`, and haptics use transient generators behind `#if canImport(UIKit)`.
+  * **Graceful Degradation**: Dual-schema JSON decoding for quotes with automatic fallback to 12 in-memory default quotes.
+  * **Version Compatibility**: Guarded modern iOS 16 `.presentationDetents` behind `#available(iOS 16.0, *)` to support iOS 15.6 deployment target.
+
+---
+
+## 9. Status & Future Enhancements
 
 * [x] Core game engine implementation and unit tests (26 passing tests).
 * [x] Feature-complete Swift CLI game with audio, board rendering, and cartoon toggles.
@@ -174,4 +188,5 @@ On standard mobile viewports (~844pt height), having permanent top chrome (Heade
 * [x] Implement Unified Merged Input & Lock-in Bar with iPad-style collapsible keypad ([`UnifiedGuessInputBar.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/UnifiedGuessInputBar.swift), [`KeypadView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/KeypadView.swift)).
 * [x] Implement rock-solid chronological auto-scroll & scroll-to-dismiss gesture on attempt board ([`AttemptBoardView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/AttemptBoardView.swift)).
 * [x] Implement interactive title trigger and Cow & Bull dialogue sheet in [`MainGameView.swift`](file:///Users/skand/projects/cowsAndBulls/iOS/CowsAndBulls/Views/MainGameView.swift).
+* [x] Physical device stability & zero-crash resilience audit ([`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md)).
 * [ ] (Optional) Computer AI Solver / reverse mode (where player sets the secret and computer guesses).
