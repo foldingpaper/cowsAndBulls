@@ -3,6 +3,7 @@
 This document tracks the evolution, key milestones, and architectural decisions for the **Cows and Bulls** project.
 * For a curated showcase of playful UX flourishes, see [`NICE_IDEAS.md`](file:///Users/skand/projects/cowsAndBulls/NICE_IDEAS.md).
 * For the pre-device deployment stability verification, see [`DEVICE_STABILITY_AUDIT.md`](file:///Users/skand/projects/cowsAndBulls/DEVICE_STABILITY_AUDIT.md).
+* For the complete App Store upload and metadata guide, see [`APP_STORE_SUBMISSION_CHECKLIST.md`](file:///Users/skand/projects/cowsAndBulls/APP_STORE_SUBMISSION_CHECKLIST.md).
 
 ---
 
