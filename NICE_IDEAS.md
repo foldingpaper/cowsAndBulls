@@ -53,6 +53,7 @@ This document chronicles the delightful, quirky, and user-centric ideas that too
 * **Quirky Rounded Typography**: Replaced formal `.serif` italics with friendly `.system(..., design: .rounded)` semibold typography, maintaining the humorous, cartoon tone.
 * **Keypad Expansion Auto-Scroll**: When reopening the collapsed keypad via the keyboard button, the board auto-scrolls smoothly so the most recent attempt is never concealed behind the incoming keypad.
 * **Calibrated Border & Control Contrast**: Upgraded the Original theme's border tones from translucent `UIColor.separator` to native `UIColor.systemGray4` on keypad keys and `UIColor.systemGray3` on code slots (`lineWidth: 1.5`), replaced the faint default `Divider()` above the keypad with a crisp 1pt themed separator, and gave code slots `surfaceBackground` fill so each slot punches cleanly off the canvas on physical OLED displays.
+* **Dynamic Cow Banter Openers**: Replaced the static hardcoded *"Psst..."* with a lively pool of 12 witty Cow prompts (*"Moo-ve over, what's the word by the barn?"*, *"Spill the milk, Bull—what's the pasture saying?"*, *"Chewing on anything juicy besides cud today?"*). Both Cow's question and Bull's wisdom now randomize synchronously on new games and rumor shuffles.
 
 ---
 

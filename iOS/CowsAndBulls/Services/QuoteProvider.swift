@@ -19,10 +19,27 @@ public class QuoteProvider {
         "Udderly perplexing: crack the 4-digit code before the herd breaks loose through the fence!"
     ]
     
+    public static let defaultCowOpeners: [String] = [
+        "Psst... heard any fresh pasture rumors?",
+        "Moo-ve over, what's the word by the barn?",
+        "Word around the silo is you know something...",
+        "Hey Bull, spit it out—what did the tractor driver say?",
+        "Tell me the latest paddock scoop!",
+        "Chewing on anything juicy besides cud today?",
+        "Don't keep me in the dark paddock, what's the rumor?",
+        "Any truth to what the hens are clucking about?",
+        "Psst... got any tips for cracking this farmer's lock?",
+        "Spill the milk, Bull—what's the pasture saying?",
+        "You've got that look... what secret are you hiding?",
+        "Are the numbers wandering into the meadow again?"
+    ]
+    
     public private(set) var quotes: [String] = []
+    public private(set) var cowOpeners: [String] = []
     
     public init() {
         self.quotes = loadQuotes()
+        self.cowOpeners = loadCowOpeners()
     }
     
     private struct QuotesContainer: Decodable {
@@ -41,6 +58,21 @@ public class QuoteProvider {
         }
         
         return QuoteProvider.defaultQuotes
+    }
+    
+    public func loadCowOpeners() -> [String] {
+        return QuoteProvider.defaultCowOpeners
+    }
+    
+    public func randomCowOpener(excluding current: String? = nil) -> String {
+        let pool = cowOpeners.isEmpty ? QuoteProvider.defaultCowOpeners : cowOpeners
+        if let current = current, pool.count > 1 {
+            let filtered = pool.filter { $0 != current }
+            if let chosen = filtered.randomElement() {
+                return chosen
+            }
+        }
+        return pool.randomElement() ?? QuoteProvider.defaultCowOpeners[0]
     }
     
     public func randomQuote(excluding current: String? = nil) -> String {

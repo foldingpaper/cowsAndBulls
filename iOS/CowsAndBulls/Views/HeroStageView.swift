@@ -167,13 +167,15 @@ public struct HeroStageView: View {
                             Text("Cow")
                                 .font(.system(size: 10, weight: .bold))
                                 .foregroundColor(viewModel.currentTheme.cowColor)
-                            Text("Psst... heard any fresh pasture rumors?")
+                            Text(viewModel.currentCowOpener)
                                 .font(.system(size: 13, weight: .medium, design: .rounded))
                                 .foregroundColor(viewModel.currentTheme.textColor)
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 7)
                                 .background(viewModel.currentTheme.surfaceBackground)
                                 .cornerRadius(12)
+                                .id(viewModel.currentCowOpener)
+                                .transition(.opacity.combined(with: .scale(scale: 0.98)))
                         }
                         Spacer(minLength: 16)
                     }

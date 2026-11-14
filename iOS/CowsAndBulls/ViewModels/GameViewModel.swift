@@ -25,8 +25,9 @@ public class GameViewModel: ObservableObject {
     private let hapticManager = HapticManager.shared
     private let quoteProvider: QuoteProvider
     
-    // Rotating Quirky Farm Quotes
+    // Rotating Quirky Farm Quotes & Banter
     @Published public var currentQuote: String = ""
+    @Published public var currentCowOpener: String = ""
     
     // World Pasture Theming
     private static let themeStorageKey = "cowsAndBulls.selectedPastureTheme"
@@ -36,6 +37,7 @@ public class GameViewModel: ObservableObject {
         self.engine = engine
         self.quoteProvider = quoteProvider
         self.currentQuote = quoteProvider.randomQuote()
+        self.currentCowOpener = quoteProvider.randomCowOpener()
         
         if let savedThemeRaw = UserDefaults.standard.string(forKey: Self.themeStorageKey),
            let savedTheme = PastureTheme(rawValue: savedThemeRaw) {
@@ -94,6 +96,7 @@ public class GameViewModel: ObservableObject {
         showGameOverModal = false
         isKeypadCollapsed = true
         currentQuote = quoteProvider.randomQuote(excluding: currentQuote)
+        currentCowOpener = quoteProvider.randomCowOpener(excluding: currentCowOpener)
         hapticManager.digitTapped()
     }
     
@@ -113,6 +116,7 @@ public class GameViewModel: ObservableObject {
     /// Cycles to another random quote from the pool (preventing immediate repetition).
     public func cycleQuote(withHaptic: Bool = true) {
         currentQuote = quoteProvider.randomQuote(excluding: currentQuote)
+        currentCowOpener = quoteProvider.randomCowOpener(excluding: currentCowOpener)
         if withHaptic {
             hapticManager.digitTapped()
         }

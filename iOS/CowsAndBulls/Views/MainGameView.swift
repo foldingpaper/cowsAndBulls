@@ -276,13 +276,15 @@ public struct MainGameView: View {
                         Text("Cow")
                             .font(.caption.bold())
                             .foregroundColor(viewModel.currentTheme.cowColor)
-                        Text("Psst... heard any fresh farm gossip?")
+                        Text(viewModel.currentCowOpener)
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundColor(viewModel.currentTheme.textColor)
                             .padding(.horizontal, 14)
                             .padding(.vertical, 9)
                             .background(viewModel.currentTheme.surfaceBackground)
                             .cornerRadius(14)
+                            .id(viewModel.currentCowOpener)
+                            .transition(.opacity.combined(with: .scale(scale: 0.98)))
                     }
                     Spacer(minLength: 24)
                 }
